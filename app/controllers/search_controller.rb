@@ -8,6 +8,9 @@ class SearchController < ApplicationController
     else
       term = params[:term].strip
       @articles = Article.search_article(term.downcase)
+      if @articles.empty?
+        return redirect_to root_path :flash => { :notice => "No articles found for #{term}" }
+      end
       time = DateTime.now.strftime("%Q")
       ip = request.ip
       redis = Redis.new(url: ENV["REDIS_URL"])
