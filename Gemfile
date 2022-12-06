@@ -24,6 +24,9 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+# Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
+gem "tailwindcss-rails"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
@@ -32,14 +35,26 @@ gem "jbuilder"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
-gem "figaro"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+#use this for styling
+gem "bulma-rails", "~> 0.9.4"
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'guard', '~> 2.18'
 gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
-gem 'bulma-rails', '~> 0.9.4'
-gem 'simple_form', '~> 5.1'
+gem "font-awesome-sass", "~> 6.2.1"
+gem 'administrate'
+gem 'pg_search', '~> 2.3', '>= 2.3.2'
+gem 'devise'
+gem 'redis-rails'
+# Use this for env variables
+gem 'figaro', '~> 1.2'
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-
+gem "sidekiq"
+gem "sinatra", github: "sinatra/sinatra"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
