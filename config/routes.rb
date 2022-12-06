@@ -3,17 +3,16 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :admin do
       resources :articles
-
       root to: "articles#index"
-    end
-  resources :articles
+  end
+
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   root "search#index"
   get 'search', to: 'search#search'
   get 'results', to: 'search#results'
+  delete 'clear', to: 'statistics#clear'
+  resources :statistics , only: [:index]
+  resources :articles , only: [:index, :show, :edit, :update, :destroy]
 end
