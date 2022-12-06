@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root "search#index"
   get 'search', to: 'search#search'
   get 'results', to: 'search#results'
-  resources :statistics , only: [:index, :destroy]
+  delete 'clear', to: 'statistics#clear'
+  resources :statistics , only: [:index]
   resources :articles , only: [:index, :show, :edit, :update, :destroy]
 end
