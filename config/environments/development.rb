@@ -64,7 +64,9 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
-
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.active_job.queue_adapter = :sidekiq
+  config.active_record.dump_schema_after_migration = false
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 end

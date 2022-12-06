@@ -1,3 +1,15 @@
+GIT
+  remote: https://github.com/sinatra/sinatra.git
+  revision: 4162502937722cdb0351f025142bf6ed9307c5e4
+  specs:
+    rack-protection (3.0.4)
+      rack
+    sinatra (3.0.4)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.0.4)
+      tilt (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -68,6 +80,15 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    administrate (0.18.0)
+      actionpack (>= 5.0)
+      actionview (>= 5.0)
+      activerecord (>= 5.0)
+      jquery-rails (>= 4.0)
+      kaminari (>= 1.0)
+      sassc-rails (~> 2.1)
+      selectize-rails (~> 0.6)
+    bcrypt (3.1.18)
     better_errors (2.9.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -89,10 +110,17 @@ GEM
       xpath (~> 3.2)
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
+    connection_pool (2.3.0)
     crass (1.0.6)
     debug (1.7.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -101,6 +129,8 @@ GEM
     ffi (1.15.5-x64-mingw-ucrt)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
+    font-awesome-sass (6.2.1)
+      sassc (~> 2.0)
     formatador (1.1.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -131,6 +161,22 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jquery-rails (4.5.1)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -150,6 +196,8 @@ GEM
     minitest (5.16.3)
     msgpack (1.6.0)
     multi_json (1.15.0)
+    mustermann (3.0.0)
+      ruby2_keywords (~> 0.0.1)
     nenv (0.3.0)
     net-imap (0.3.1)
       net-protocol
@@ -165,7 +213,11 @@ GEM
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    orm_adapter (0.5.0)
     pg (1.4.5-x64-mingw-ucrt)
+    pg_search (2.3.6)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -206,21 +258,53 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.8.0)
+    redis-actionpack (5.3.0)
+      actionpack (>= 5, < 8)
+      redis-rack (>= 2.1.0, < 3)
+      redis-store (>= 1.1.0, < 2)
+    redis-activesupport (5.3.0)
+      activesupport (>= 3, < 8)
+      redis-store (>= 1.3, < 2)
+    redis-client (0.11.2)
+      connection_pool
+    redis-rack (2.1.4)
+      rack (>= 2.0.8, < 3)
+      redis-store (>= 1.2, < 2)
+    redis-rails (5.0.2)
+      redis-actionpack (>= 5.0, < 6)
+      redis-activesupport (>= 5.0, < 6)
+      redis-store (>= 1.2, < 2)
+    redis-store (1.9.1)
+      redis (>= 4, < 5)
     regexp_parser (2.6.1)
     reline (0.3.1)
       io-console (~> 0.5)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.5)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
+    selectize-rails (0.12.6)
     selenium-webdriver (4.7.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     shellany (0.0.1)
-    simple_form (5.1.0)
-      actionpack (>= 5.2)
-      activemodel (>= 5.2)
+    sidekiq (7.0.2)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.11.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -230,7 +314,10 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.21-x64-mingw-ucrt)
+      railties (>= 6.0.0)
     thor (1.2.1)
+    tilt (2.0.11)
     timeout (0.3.1)
     turbo-rails (1.3.2)
       actionpack (>= 6.0.0)
@@ -240,6 +327,8 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2022.7)
       tzinfo (>= 1.0.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -261,23 +350,30 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  administrate
   better_errors (~> 2.9, >= 2.9.1)
   bootsnap
   bulma-rails (~> 0.9.4)
   capybara
   debug
-  figaro
+  devise
+  figaro (~> 1.2)
+  font-awesome-sass (~> 6.2.1)
   guard (~> 2.18)
   guard-livereload (~> 2.5, >= 2.5.2)
   importmap-rails
   jbuilder
   pg (~> 1.1)
+  pg_search (~> 2.3, >= 2.3.2)
   puma (~> 5.0)
   rails (~> 7.0.4)
+  redis-rails
   selenium-webdriver
-  simple_form (~> 5.1)
+  sidekiq
+  sinatra!
   sprockets-rails
   stimulus-rails
+  tailwindcss-rails
   turbo-rails
   tzinfo-data
   web-console

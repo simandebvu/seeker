@@ -1,0 +1,27 @@
+<%= form_with url: "/search", method: :get , local: true do |form| %>
+<div class="field my-5">
+  <div class="control has-icons-left has-icons-right my-5">
+      <%= text_field_tag :term,
+    nil,
+    class: 'input is-success',
+    placeholder: 'Start searching for articles',
+    autocomplete: "off",
+    autofocus: true %>
+    <span class="icon is-small is-left">
+      <i class="fas fa-newspaper"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </div>
+  <p class="help is-success">Start Typing. Enjoy Convienience.</p>
+    <%= submit_tag 'Seek!',
+    name: nil,
+    data: { disable_with: false },
+    class: 'mx-auto button is-success my-5' %>
+</div>
+<% end %>
+
+
+
+<div class="search_result"></div>
