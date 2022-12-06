@@ -9,7 +9,9 @@ class SearchController < ApplicationController
       term = params[:term].strip
       @articles = Article.search_article(term.downcase)
       if @articles.empty?
-        return redirect_to root_path :flash => { :notice => "No articles found for #{term}" }
+        respond_to do |format|
+          format.html { redirect_to root_path, notice: "No results found for #{term}" }
+        end
       end
       time = DateTime.now.strftime("%Q")
       ip = request.ip

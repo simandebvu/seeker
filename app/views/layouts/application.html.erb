@@ -9,8 +9,10 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% if flash[:notice] %>
+      <div class="notification is-primary global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
     <% end %>
     <%= render 'search/header' %>
     <main class="container mx-auto mt-28 px-5 flex bg-white">
