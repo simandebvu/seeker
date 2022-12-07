@@ -37,6 +37,7 @@ Rails.application.configure do
   config.active_storage.service = :test
 
   config.action_mailer.perform_caching = false
+  config.active_record.cache_versioning = false
 
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
@@ -51,7 +52,7 @@ Rails.application.configure do
 
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
-
+  config.active_record.dump_schema_after_migration = false
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

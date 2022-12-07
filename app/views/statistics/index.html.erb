@@ -1,0 +1,28 @@
+<h1 class="title has-text-white">Term Groupings</h1>
+<%= pie_chart  Search.group(:term).count %>
+<h1 class="title has-text-white">Article Counts</h1>
+<%= line_chart Search.group(:article_count).group(:count).count %>
+<h1 class="title has-text-white">Analysis Table</h1>
+<div class="table-responsive statistics_table">
+  <table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th class="result_count">Search count</th>
+        <th class="result_count">Average results</th>
+        <th class="result_count">Zero results count</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @searches.each do |search| %>
+        <tr>
+          <td><%= search.term %></td>
+          <td><%= search.count %></td>
+          <td><%= search.article_count / search.count %></td>
+          <td><%= search.zero_article_count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

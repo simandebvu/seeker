@@ -32,14 +32,26 @@ gem "jbuilder"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
-gem "figaro"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+#use this for styling
+gem "bulma-rails", "~> 0.9.4"
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'guard', '~> 2.18'
 gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
-gem 'bulma-rails', '~> 0.9.4'
-gem 'simple_form', '~> 5.1'
+gem "font-awesome-sass", "~> 6.2.1"
+gem 'administrate'
+gem 'pg_search', '~> 2.3', '>= 2.3.2'
+gem 'devise'
+gem 'redis-rails'
+# Use this for env variables
+gem 'figaro', '~> 1.2'
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-
+gem "sidekiq"
+gem "sinatra", github: "sinatra/sinatra"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
@@ -52,8 +64,11 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'factory_bot_rails'
 end
 
+gem "rspec"
+gem "rspec-rails"
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -71,3 +86,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "ruby-lsp", "~> 0.3.6", :group => :development
+gem 'rails-controller-testing'
+gem "chartkick"

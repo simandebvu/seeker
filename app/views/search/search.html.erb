@@ -1,0 +1,34 @@
+<div class="table-responsive  is-primary">
+  <table class="table is-striped is-hoverable is-fullwidth table-bordered table-hover">
+    <thead  class = "has-background-dark ">
+      <tr>
+        <th class = "has-text-white is-size-3 my-4">Search Results</th>
+        <th></th>
+      </tr>
+    </thead>
+    <% if @articles %>
+      <tbody>
+        <% @articles.each do |article| %>
+          <tr>
+            <td><%= article.title %></td>
+            <td>
+              <%= link_to article, class: 'btn btn-info btn-sm' do %>
+                <%= icon 'fas', 'eye', class: 'fa-fw' %>
+              <% end %>
+              <%= link_to edit_article_path(article), class: 'btn btn-success btn-sm' do %>
+                <%= icon 'fas', 'edit', class: 'fa-fw' %>
+              <% end %>
+              <%= link_to article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
+                <%= icon 'fas', 'times', class: 'fa-fw' %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    <% else %>
+      <tr>
+        <td colspan="2" class = "is-primary">No articles found</td>
+      </tr>
+    <% end %>
+  </table>
+</div>
