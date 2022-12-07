@@ -1,7 +1,7 @@
 <nav class="navbar  has-background-dark" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <p class="title is-1 has-text-white">
-      <a href='/'  class = " is-info is-active" >Seeker</a></p>
+      <a class="navbar-item" href='/'>Seeker</a></p>
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" href='/' >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -10,17 +10,35 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item  has-text-white" href="/articles">
-        View All Articles
-      </a>
-      <a class="navbar-item  has-text-white" href="/statistics">
-        View Statistics
-      </a>
-      <a class="navbar-item  has-text-white" href="/admin">
-        Admin
-      </a>
-      <a class="navbar-item  has-text-white" href="/sidekiq">
-        See Background Tasks
-      </a>
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-ghost" href="/statistics">
+            View Statistics
+          </a>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-ghost" href="/articles">
+            All Articles
+          </a>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-ghost" href="/sidekiq">
+            See Background Tasks
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="/admin">
+            Admin
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
