@@ -355,8 +355,6 @@ GEM
       railties (>= 6.0.0)
     syntax_tree (4.3.0)
       prettier_print (>= 1.0.2)
-    tailwindcss-rails (2.0.21-x64-mingw-ucrt)
-      railties (>= 6.0.0)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.1)
@@ -420,7 +418,6 @@ DEPENDENCIES
   sinatra!
   sprockets-rails
   stimulus-rails
-  tailwindcss-rails
   turbo-rails
   tzinfo-data
   web-console

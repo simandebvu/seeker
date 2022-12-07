@@ -33,7 +33,7 @@ Welcome to seeker ! A search analytics project for articles. The features of the
   
 ## Live demo link
 
-Visit the live demo [link](https://seeker-search-analytics.herokuapp.com/)
+Visit the live demo [link](https://seekerzim.fly.dev/)
 
 ## Setup
 
