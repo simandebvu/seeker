@@ -92,3 +92,4 @@ end
 
 gem "ruby-lsp", "~> 0.3.6", :group => :development
 gem 'rails-controller-testing'
+gem "chartkick"
